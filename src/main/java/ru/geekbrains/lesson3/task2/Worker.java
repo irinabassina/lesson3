@@ -7,8 +7,8 @@ package ru.geekbrains.lesson3.task2;
 public class Worker extends Employee {
 
 
-    public Worker(String surName, String name, double salary) {
-        super(surName, name, salary);
+    public Worker(String surName, String name, int age, double salary) {
+        super(surName, name, age, salary);
     }
 
     @Override
@@ -18,7 +18,7 @@ public class Worker extends Employee {
 
     @Override
     public String toString() {
-        return String.format("%s %s; Рабочий; Среднемесячная заработная плата: %.2f руб.",
-                surName, name, calculateSalary());
+        return String.format("%s %s %d; Рабочий; Среднемесячная заработная плата: %.2f руб.",
+                surName, name, age, calculateSalary());
     }
 }

@@ -14,9 +14,10 @@ public abstract class Employee implements Comparable<Employee>{
         return surNameRes;
     }
 
-    public Employee(String surName, String name, double salary) {
+    public Employee(String surName, String name, int age, double salary) {
         this.name = name;
         this.surName = surName;
+        this.age = age;
         this.salary = salary;
     }
 
@@ -31,10 +32,16 @@ public abstract class Employee implements Comparable<Employee>{
     protected String surName;
 
     /**
+     * Возраст
+     */
+    protected int age;
+
+    /**
      * Ставка заработной платы
      */
     protected double salary;
 
+    
     /**
      * Расчет среднемесячной заработной платы
      * @return заработная плата в месяц
@@ -44,6 +51,6 @@ public abstract class Employee implements Comparable<Employee>{
     @Override
     public String toString() {
         return String.format("%s %s; ставка: %.2f руб.; заработная плата: %.2f руб.",
-                surName, name, salary, calculateSalary());
+                surName, name, age, salary, calculateSalary());
     }
 }
